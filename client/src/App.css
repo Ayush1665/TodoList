@@ -1,0 +1,177 @@
+/* Define theme colors using CSS variables */
+:root {
+  --background-color: #f0f0f5;
+  --text-color: #333;
+  --input-background: #fff;
+  --input-border: #ddd;
+  --todo-background: #fff;
+  --update-button: #ffbf00;
+  --delete-button: #ff4c4c;
+  --header-background: #fff;
+  --header-text-color: #333;
+  --button-background: #008080;
+  --button-text-color: #fff;
+}
+
+/* Dark theme overrides */
+.dark-theme {
+  --background-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --input-background: #333;
+  --input-border: #555;
+  --todo-background: #333;
+  --update-button: #b38600;
+  --delete-button: #d32f2f;
+  --header-background: #333;
+  --header-text-color: #e0e0e0;
+  --button-background: #004d40;
+  --button-text-color: #e0e0e0;
+}
+
+/* Apply theme colors to the entire page */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Header styling */
+.App h1 {
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.form input[type="text"] {
+  padding: 10px;
+  width: 85%;
+  border: 2px solid var(--input-border);
+  border-radius: 6px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+.form input[type="text"]:focus,
+.form button[type="submit"]:focus {
+  outline: none;
+}
+
+.form button[type="submit"] {
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Todo list items */
+.todo-listItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--todo-background);
+  color: var(--text-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.item-content {
+  width: 60%;
+}
+
+.todo-item button {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--button-text-color);
+}
+
+.todo-item button:focus {
+  outline: none;
+}
+
+.update-item {
+  background-color: var(--update-button);
+}
+
+.delete-item {
+  background-color: var(--delete-button);
+}
+
+/* Update form styling */
+.update-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.update-new-input {
+  width: 80%;
+  border-radius: 6px;
+  border: 2px solid var(--input-border);
+  padding: 8px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+  outline: none;
+}
+
+.update-new-btn {
+  background-color: darkorchid;
+  color: var(--button-text-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+/* Theme toggle button styles */
+.theme-toggle-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--update-button);
+}
